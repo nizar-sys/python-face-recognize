@@ -6,10 +6,12 @@ from flask import Flask, jsonify, request
 from flask import Response
 from flask_restful import Resource, Api
 import sys
+from flask_cors import CORS
 
 app = Flask(__name__)
 api = Api(app)
 port = 5100
+CORS(app)
 
 # get face with webcam
 cam = cv2.VideoCapture(0)
